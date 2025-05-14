@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/instruction_line_padding_bottom_socure"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp">
+    <TextView
+        android:textSize="22sp"
+        android:textColor="@color/socure_dark_blue"
+        android:gravity="center_horizontal"
+        android:id="@+id/tv_pointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/help_bullet_icon_socure"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_instruction"/>
+    <TextView
+        android:id="@+id/tv_instruction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_pointer"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/socure_instruction"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

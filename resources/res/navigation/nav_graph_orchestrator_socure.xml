@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_orch_graph"
+    app:startDestination="@+id/socure_action_doc_selection">
+    <action
+        android:id="@+id/socure_action_doc_selection"
+        app:destination="@+id/socure_nav_doc_selection_frag"
+        app:popUpTo="@+id/nav_orch_graph"
+        app:popUpToInclusive="true"/>
+    <action
+        android:id="@+id/socure_action_camera"
+        app:destination="@+id/socure_nav_scanner_frag"
+        app:popUpTo="@+id/nav_orch_graph"
+        app:popUpToInclusive="true"/>
+    <fragment
+        android:label="@string/socure_doc_selection"
+        android:name="com.socure.docv.capturesdk.feature.selection.persentation.ui.DocSelectionFragment"
+        android:id="@+id/socure_nav_doc_selection_frag"/>
+    <fragment
+        android:label="@string/socure_scannerScreen"
+        android:name="com.socure.docv.capturesdk.feature.scanner.presentation.ui.ScannerFragment"
+        android:id="@+id/socure_nav_scanner_frag"/>
+</navigation>

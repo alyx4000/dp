@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_orch_progress"
+    app:startDestination="@+id/nav_progress_frag">
+    <fragment
+        android:label="@string/socure_progressScreen"
+        android:name="com.socure.docv.capturesdk.feature.progress.ui.ProgressFragment"
+        android:id="@+id/nav_progress_frag">
+        <action
+            android:id="@+id/action_pop_to_consent"
+            app:destination="@+id/nav_consent_frag"
+            app:popUpTo="@+id/nav_orch_progress"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:label="@string/socure_consent_screen"
+        android:name="com.socure.docv.capturesdk.feature.consent.ui.ConsentFragment"
+        android:id="@+id/nav_consent_frag">
+        <action
+            android:id="@+id/action_consent_privacy_dialog"
+            app:destination="@+id/nav_consent_dialog"/>
+    </fragment>
+    <dialog
+        android:name="com.socure.docv.capturesdk.feature.consent.ui.ConsentDialog"
+        android:id="@+id/nav_consent_dialog">
+        <argument
+            android:name="privacyPolicyLink"
+            app:argType="string"/>
+        <argument
+            android:name="closeContentDescription"
+            app:argType="string"/>
+    </dialog>
+</navigation>

@@ -1,0 +1,118 @@
+package sdk.pendo.io.a4;
+
+import androidx.exifinterface.media.ExifInterface;
+import sdk.pendo.io.f4.h;
+import sdk.pendo.io.m3.v;
+
+/* loaded from: classes6.dex */
+public interface b {
+    public static final v A;
+    public static final v B;
+    public static final v C;
+    public static final v D;
+    public static final v E;
+    public static final v F;
+    public static final v G;
+    public static final v H;
+    public static final v I;
+    public static final v J;
+    public static final v K;
+    public static final v L;
+    public static final v M;
+    public static final v N;
+    public static final v O;
+    public static final v P;
+    public static final v Q;
+    public static final v R;
+    public static final v S;
+    public static final v T;
+    public static final v U;
+    public static final v V;
+    public static final v W;
+    public static final v X;
+    public static final v Y;
+
+    /* renamed from: a, reason: collision with root package name */
+    public static final v f848a;
+    public static final v b;
+    public static final v c;
+    public static final v d;
+    public static final v e;
+    public static final v f;
+    public static final v g;
+    public static final v h;
+    public static final v i;
+    public static final v j;
+    public static final v k;
+    public static final v l;
+    public static final v m;
+    public static final v n;
+    public static final v o;
+    public static final v p;
+    public static final v q;
+    public static final v r;
+    public static final v s;
+    public static final v t;
+    public static final v u;
+    public static final v v;
+    public static final v w;
+    public static final v x;
+    public static final v y;
+    public static final v z;
+
+    static {
+        v vVar = new v("1.3.132.0");
+        f848a = vVar;
+        b = vVar.b("1");
+        c = vVar.b(ExifInterface.GPS_MEASUREMENT_2D);
+        d = vVar.b(ExifInterface.GPS_MEASUREMENT_3D);
+        e = vVar.b("4");
+        f = vVar.b("5");
+        g = vVar.b("6");
+        h = vVar.b("7");
+        i = vVar.b("8");
+        j = vVar.b("9");
+        k = vVar.b("10");
+        l = vVar.b("15");
+        m = vVar.b("16");
+        n = vVar.b("17");
+        o = vVar.b("22");
+        p = vVar.b("23");
+        q = vVar.b("24");
+        r = vVar.b("25");
+        s = vVar.b("26");
+        t = vVar.b("27");
+        u = vVar.b("28");
+        v = vVar.b("29");
+        w = vVar.b("30");
+        x = vVar.b("31");
+        y = vVar.b("32");
+        z = vVar.b("33");
+        A = vVar.b("34");
+        B = vVar.b("35");
+        C = vVar.b("36");
+        D = vVar.b("37");
+        E = vVar.b("38");
+        F = vVar.b("39");
+        G = h.Q;
+        H = h.W;
+        v vVar2 = new v("1.3.132.1");
+        I = vVar2;
+        J = vVar2.b("11.0");
+        K = vVar2.b("11.1");
+        L = vVar2.b("11.2");
+        M = vVar2.b("11.3");
+        N = vVar2.b("14.0");
+        O = vVar2.b("14.1");
+        P = vVar2.b("14.2");
+        Q = vVar2.b("14.3");
+        R = vVar2.b("15.0");
+        S = vVar2.b("15.1");
+        T = vVar2.b("15.2");
+        U = vVar2.b("15.3");
+        V = vVar2.b("16.0");
+        W = vVar2.b("16.1");
+        X = vVar2.b("16.2");
+        Y = vVar2.b("16.3");
+    }
+}

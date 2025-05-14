@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="500170001"
+    android:versionName="17.0.1"
+    android:compileSdkVersion="34"
+    android:compileSdkVersionCodename="14"
+    package="com.DailyPay.DailyPay"
+    platformBuildVersionCode="34"
+    platformBuildVersionName="14">
+    <uses-sdk
+        android:minSdkVersion="26"
+        android:targetSdkVersion="34"/>
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.OPEN_DOCUMENT"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <category android:name="android.intent.category.OPENABLE"/>
+            <data android:mimeType="*/*"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO"/>
+            <data android:scheme="mailto"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND_MULTIPLE"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <data android:mimeType="*/*"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND"/>
+            <data android:mimeType="*/*"/>
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="http"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission
+        android:name="com.DailyPay.DailyPay.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.DailyPay.DailyPay.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_APP_BADGE"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ"/>
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE"/>
+    <application
+        android:theme="@style/AppTheme"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:name="com.DailyPay.DailyPay.MainApplication"
+        android:allowBackup="false"
+        android:largeHeap="true"
+        android:extractNativeLibs="false"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:requestLegacyExternalStorage="true">
+        <meta-data
+            android:name="expo.modules.notifications.default_notification_icon"
+            android:resource="@drawable/notification_icon"/>
+        <meta-data
+            android:name="expo.modules.updates.ENABLED"
+            android:value="true"/>
+        <meta-data
+            android:name="expo.modules.updates.EXPO_RUNTIME_VERSION"
+            android:value="@string/expo_runtime_version"/>
+        <meta-data
+            android:name="expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH"
+            android:value="NEVER"/>
+        <meta-data
+            android:name="expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS"
+            android:value="0"/>
+        <meta-data
+            android:name="expo.modules.updates.EXPO_UPDATE_URL"
+            android:value="https://u.expo.dev/e9275a17-9018-4535-ae03-f545863fda1c"/>
+        <meta-data
+            android:name="io.branch.sdk.BranchKey"
+            android:value="key_live_jiR2t0Iwr45RrrDO1OYNVingDxo08LdH"/>
+        <meta-data
+            android:name="iterable_notification_icon"
+            android:resource="@drawable/notification_icon"/>
+        <meta-data
+            android:name="expo.modules.updates.UPDATES_CONFIGURATION_REQUEST_HEADERS_KEY"
+            android:value="{&quot;expo-channel-name&quot;:&quot;production-v17.0.0&quot;}"/>
+        <activity
+            android:theme="@style/Theme.App.SplashScreen"
+            android:name="com.DailyPay.DailyPay.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:configChanges="layoutDirection|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard|locale"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="dailypay"/>
+                <data android:scheme="com.DailyPay.DailyPay"/>
+                <data android:scheme="exp+dailypay"/>
+            </intent-filter>
+            <intent-filter
+                android:autoVerify="true"
+                data-generated="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <data
+                    android:scheme="https"
+                    android:host="dailypay.test-app.link"
+                    android:pathPrefix="/dailypay"/>
+                <data
+                    android:scheme="https"
+                    android:host="dailypay.app.link"
+                    android:pathPrefix="/dailypay"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter
+                android:autoVerify="true"
+                data-generated="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <data
+                    android:scheme="https"
+                    android:host="dailypay.app.link"
+                    android:pathPrefix="/dailypay"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+            android:exported="false"/>
+        <activity
+            android:name="sdk.pendo.io.activities.PendoGateActivity"
+            android:exported="true"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="pendo-90a34583"/>
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false"/>
+        <provider
+            android:name="io.invertase.firebase.crashlytics.ReactNativeFirebaseCrashlyticsInitProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.reactnativefirebasecrashlyticsinitprovider"
+            android:initOrder="98"/>
+        <service
+            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingHeadlessService"
+            android:exported="false"/>
+        <service
+            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter android:priority="-505">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver
+            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="true"/>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value=""/>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/white"/>
+        <meta-data
+            android:name="firebase_performance_collection_enabled"
+            android:value="true"/>
+        <meta-data
+            android:name="firebase_performance_collection_deactivated"
+            android:value="false"/>
+        <meta-data
+            android:name="app_data_collection_default_enabled"
+            android:value="true"/>
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:exported="false"
+            android:directBootAware="true">
+            <meta-data
+                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.crashlytics.ndk.CrashlyticsNdkRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.FirebaseRemoteConfigKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <provider
+            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.reactnativefirebaseappinitprovider"
+            android:initOrder="99"/>
+        <meta-data
+            android:name="io.sentry.auto-init"
+            android:value="false"/>
+        <provider
+            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.fileprovider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths"/>
+        </provider>
+        <provider
+            android:name="expo.modules.clipboard.ClipboardFileProvider"
+            android:exported="true"
+            android:authorities="com.DailyPay.DailyPay.ClipboardFileProvider">
+            <meta-data
+                android:name="expo.modules.clipboard.CLIPBOARD_FILE_PROVIDER_PATHS"
+                android:resource="@xml/clipboard_provider_paths"/>
+        </provider>
+        <provider
+            android:name="expo.modules.filesystem.FileSystemFileProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.FileSystemFileProvider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_system_provider_paths"/>
+        </provider>
+        <provider
+            android:name="expo.modules.mailcomposer.MailComposerFileProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.MailComposerFileProvider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/mail_composer_provider_paths"/>
+        </provider>
+        <service
+            android:name="expo.modules.notifications.service.ExpoFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter android:priority="-501">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver
+            android:name="expo.modules.notifications.service.NotificationsService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="-500">
+                <action android:name="expo.modules.notifications.NOTIFICATION_EVENT"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.REBOOT"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="expo.modules.notifications.service.NotificationForwarderActivity"
+            android:exported="false"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"
+            android:launchMode="standard"
+            android:noHistory="true"/>
+        <provider
+            android:name="expo.modules.sharing.SharingFileProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.SharingFileProvider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/sharing_provider_paths"/>
+        </provider>
+        <meta-data
+            android:name="org.unimodules.core.AppLoader#react-native-headless"
+            android:value="expo.modules.adapters.react.apploader.RNHeadlessAppLoader"/>
+        <meta-data
+            android:name="com.facebook.soloader.enabled"
+            android:value="true"/>
+        <activity
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:name="com.extole.android.sdk.impl.WebViewFullScreenActivity"
+            android:exported="true"/>
+        <service
+            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+            android:enabled="true"
+            android:exported="false">
+            <meta-data
+                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl"/>
+        </service>
+        <activity
+            android:theme="@style/Theme.Hidden"
+            android:name="androidx.credentials.playservices.HiddenActivity"
+            android:enabled="true"
+            android:exported="false"
+            android:configChanges="screenSize|screenLayout|orientation|keyboardHidden"
+            android:fitsSystemWindows="true"/>
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="face,ocr,barcode"/>
+        <activity
+            android:theme="@style/Theme.Tensor"
+            android:name="com.socure.docv.capturesdk.feature.orchestrator.presentation.ui.OrchestratorActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:configChanges="fontScale|layoutDirection|uiMode|locale"
+            android:hardwareAccelerated="true"
+            android:resizeableActivity="false"/>
+        <activity
+            android:theme="@style/Base.Theme.PendoTheme"
+            android:name="sdk.pendo.io.activities.PendoGuideVisualActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:configChanges="screenSize|orientation|keyboardHidden"/>
+        <service
+            android:name="com.iterable.iterableapi.IterableFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter android:priority="-1">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver
+            android:name="com.iterable.iterableapi.IterablePushActionReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.iterable.push.ACTION_PUSH_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <activity
+            android:theme="@style/TrampolineActivity.Transparent"
+            android:name="com.iterable.iterableapi.IterableTrampolineActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"/>
+        <uses-library
+            android:name="androidx.security"
+            android:required="false"/>
+        <activity
+            android:theme="@style/Dexter.Internal.Theme.Transparent"
+            android:name="com.karumi.dexter.DexterActivity"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"/>
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+            android:exported="true"
+            android:visibleToInstantApps="true"/>
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+            <meta-data
+                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+                android:value="true"/>
+        </receiver>
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="false"
+            android:directBootAware="true">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.google.firebase.sessions.SessionLifecycleService"
+            android:enabled="true"
+            android:exported="false"/>
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.firebaseinitprovider"
+            android:initOrder="100"
+            android:directBootAware="true"/>
+        <service
+            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+            android:exported="false"
+            android:directBootAware="true">
+            <meta-data
+                android:name="com.google.firebase.components:com.google.mlkit.vision.face.internal.FaceRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.mlkit.vision.text.internal.TextRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data
+                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <provider
+            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.mlkitinitprovider"
+            android:initOrder="99"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"/>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false"/>
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false"/>
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.androidx-startup">
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup"/>
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup"/>
+        </provider>
+        <provider
+            android:name="io.sentry.android.core.SentryInitProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.SentryInitProvider"/>
+        <provider
+            android:name="io.sentry.android.core.SentryPerformanceProvider"
+            android:exported="false"
+            android:authorities="com.DailyPay.DailyPay.SentryPerformanceProvider"
+            android:initOrder="200"/>
+        <service
+            android:name="androidx.camera.core.impl.MetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider"/>
+        </service>
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false"
+            android:directBootAware="true"/>
+        <service
+            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+            android:exported="false">
+            <meta-data
+                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+                android:value="cct"/>
+        </service>
+        <service
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false"/>
+        <receiver
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+            android:exported="false"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.jakewharton.processphoenix.ProcessPhoenix"
+            android:exported="false"
+            android:process=":phoenix"/>
+        <activity
+            android:theme="@style/Theme.PlayCore.Transparent"
+            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+            android:exported="false"
+            android:stateNotNeeded="true"/>
+        <meta-data
+            android:name="com.android.dynamic.apk.fused.modules"
+            android:value="base"/>
+        <meta-data
+            android:name="com.android.stamp.source"
+            android:value="https://play.google.com/store"/>
+        <meta-data
+            android:name="com.android.stamp.type"
+            android:value="STAMP_TYPE_STANDALONE_APK"/>
+        <meta-data
+            android:name="com.android.vending.splits"
+            android:resource="@xml/splits0"/>
+        <meta-data
+            android:name="com.android.vending.derived.apk.id"
+            android:value="2"/>
+    </application>
+</manifest>

@@ -1,0 +1,18 @@
+package com.quantummetric.ui.internal;
+
+/* loaded from: classes5.dex */
+public enum av {
+    EVENT_ENGINE_MAIN_LOOP_EXCEPTION("QME0001"),
+    EVENT_ENGINE_GET_START_EVENT_CALLBACK_EXCEPTION("QME0002"),
+    EVENT_ENGINE_LOG_PAGE_EXCEPTION("QME0003"),
+    EVENT_ENGINE_LOG_OUT_OF_BAND_EVENT_EXCEPTION("QME0004"),
+    EVENT_ENGINE_LOG_OUT_OF_BAND_DATA_EXCEPTION("QME0005"),
+    EVENT_ENGINE_LOG_OUT_OF_BAND_DATA_TO_ARRAY_EXCEPTION("QME0006"),
+    EVENT_ENGINE_LOG_EVENT_EXCEPTION("QME0007");
+
+    public final String h;
+
+    av(String str) {
+        this.h = str;
+    }
+}
